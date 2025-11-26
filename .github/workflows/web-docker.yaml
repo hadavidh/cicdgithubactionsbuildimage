@@ -23,4 +23,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: vaozgeely/express-app:latest
+          tags: dave67000/daverepo:latest
