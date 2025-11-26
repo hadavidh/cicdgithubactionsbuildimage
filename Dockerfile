@@ -1,3 +1,3 @@
 # Dockerfile
 FROM nginx:stable-perl
-COPY . /user/share/nginx/html
+COPY .  /usr/share/nginx/html 
