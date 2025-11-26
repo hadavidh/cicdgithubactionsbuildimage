@@ -1,11 +1,10 @@
-FROM node:22
+# Dockerfile
+FROM ubuntu:24.04
 
-WORKDIR /app
+ENV DEBIAN_FRONTEND=noninteractive
 
-COPY . .
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
 
-RUN npm i
-
-CMD ["npm", "run", "start"]
-
-EXPOSE 3000
+CMD ["bash", "-lc", "cat /etc/os-release && echo OK"]
