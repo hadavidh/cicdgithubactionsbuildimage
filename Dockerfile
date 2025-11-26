@@ -1,10 +1,3 @@
 # Dockerfile
-FROM ubuntu:24.04
-
-ENV DEBIAN_FRONTEND=noninteractive
-
-RUN apt-get update \
- && apt-get install -y --no-install-recommends ca-certificates \
- && rm -rf /var/lib/apt/lists/*
-
-CMD ["bash", "-lc", "cat /etc/os-release && echo OK"]
+FROM nginx:stable-perl
+COPY . /user/sharte/nginx/html
